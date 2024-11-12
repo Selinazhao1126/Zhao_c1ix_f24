@@ -1,69 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My first HTML page</title>
+    <link rel="icon" type="assets/ICON.png" href="assets/ICON.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izakaya Time</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Users/selina/Desktop/Zhao_c1ix_f24/entries/entry 1/assets/entry1.css"> 
 </head>
-
 <body>
 
-  <h1>This is heading 1</h1>
-  <h2>This is heading 2</h2>
-  <h3>This is heading 3</h3>
-  <h4>This is heading 4</h4>
-  <h5>This is heading 5</h5>
-  <h6>This is heading 6</h6>
+    <h1>"IZAKAYA" TIME!!</h1>
+    
+    <div class="test-text">
+        Test my fatigue<br>
+        level throughout<br>
+        the day
+    </div>
+    
+    <div class="clock">
+        <div class="hour" id="hour"></div>
+        <div class="minute" id="minute"></div>
+        <div class="second" id="second"></div>
+    </div>
+    
+    <div class="sad-emoji" id="emoji">😞</div>
+    
+    <button class="button" id="startButton">0-100 START!!</button>
+    
+    <div class="progress-bar" id="progressBar"></div>
 
-  <p>This is a paragraph</p>
+    <script>
+        const emoji = document.getElementById('emoji');
+        const progressBar = document.getElementById('progressBar');
+        const startButton = document.getElementById('startButton');
 
-  To break<br>lines<br>in a<br>paragraph,<br>use the br element.
+        emoji.addEventListener('click', () => {
+            emoji.textContent = emoji.textContent === "😞" ? "😊" : "😞";
+        });
 
-  <hr>
-  The hr tag creates a horizontal line in an HTML page.
+        startButton.addEventListener('click', () => {
+            progressBar.classList.add('animate');
+        });
 
-  <em>This is emphasized text</em>
+        function updateClock() {
+            const hourHand = document.getElementById('hour');
+            const minuteHand = document.getElementById('minute');
+            const secondHand = document.getElementById('second');
 
-  <strong>This is strong text</strong>
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
 
-  <!--This is a comment. Comments are not displayed in the browser-->
+            const hourRotation = (hours % 12) * 30 + (minutes / 2);
+            const minuteRotation = minutes * 6;
+            const secondRotation = seconds * 6;
 
-  <ol>
-    <li>This is an</li>
-    <li>Ordered</li>
-    <li>List</li>
-  </ol>
+            hourHand.style.transform = `translateX(-50%) rotate(${hourRotation}deg)`;
+            minuteHand.style.transform = `translateX(-50%) rotate(${minuteRotation}deg)`;
+            secondHand.style.transform = `translateX(-50%) rotate(${secondRotation}deg)`;
+        }
 
-  <ul>
-    <li>This is an</li>
-    <li>Unordered</li>
-    <li>List</li>
-  </ul>
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 
-  The <code>code element</code> example
-
-  The <pre>                                    * p r e* * </pre> example
-
-  The <em>em element</em> example
-
-  The <mark>mark element</mark> example
-
-  The <small>small element</small> example
-
-  The <strong>strong element</strong> example
-
-  The <sub>sub element</sub> example
-
-  The <sup>sup element</sup> example
-
-  <input type="radio" name="rad"> Radio input
-
-  <input type="checkbox"> Checkbox input
-
-  Text input <input type="text" value="default value that goes on and on without stopping or punctuation">
-
-  <a href="http://www.newschool.edu">This is a link</a>
-
-  This is an image <img src="imgs/dog.jpg" alt="A cool dog">
 </body>
 </html>

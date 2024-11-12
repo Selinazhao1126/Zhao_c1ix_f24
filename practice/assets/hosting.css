@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Chaumont";
+    src: url("https://cdn.glitch.com/a608bf57-e75d-4433-b73c-a5dcdf512ce8%2Fchaumont.woff?v=1632778105697") format("woff")
+  }
+  
+  @font-face {
+    font-family: "PicNic";
+    src: url("https://cdn.glitch.global/a608bf57-e75d-4433-b73c-a5dcdf512ce8/PicNic-Regular.woff?v=1664895784728") format("woff")
+  }
+  
+  body{
+    font-family: PicNic;
+    font-size: 80px;
+  }
+  
+  img{
+  /*   width: 100%; 
+    height: 100%; */
+  }

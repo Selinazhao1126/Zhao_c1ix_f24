@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Press Start 2P', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.nav {
+    width: 100%;
+    padding: 15px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav .logo {
+    font-size: 20px;
+}
+
+.nav .nav-links a {
+    color: #ff6600;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.nav .nav-links a:hover {
+    color: #ffffff;
+}
+
+.main-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.main-image {
+    width: 600px;
+    height: auto;
+    z-index: 1;
+    position: relative;
+}
+
+.ghost1, .ghost2, .pumpkin, .halloween-text {
+    position: absolute;
+}
+
+.ghost1 {
+    top: 50px;
+    left: -180px;
+    width: 180px;
+    z-index: 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+.ghost2 {
+    top: 50px;
+    right: -180px;
+    width: 180px;
+    z-index: 0;
+    animation: float 3s ease-in-out infinite alternate;
+}
+
+.pumpkin {
+    bottom: -50px;
+    left: -150px;
+    width: 220px;
+    z-index: 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+.halloween-text {
+    top: 500px;
+    width: 500px;
+    height: auto;
+    z-index: 1;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.uluh-section {
+    margin-top: 300px; 
+    text-align: center;
+    animation: fade-in 2s ease-in-out;
+}
+
+.uluh-logo {
+    width: 400px;
+    height: auto;
+    margin-bottom: 20px;
+    animation: scale-up 2s ease-in-out infinite alternate;
+}
+
+.uluh-section h2 {
+    font-size: 20px;
+    color: white;
+    font-family: 'Press Start 2P', sans-serif;
+    margin-bottom: 30px;
+}
+
+.uluh-dishes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: slide-in 1.5s ease-in-out;
+}
+
+.uluh-dishes .dish img {
+    animation: float 3s ease-in-out infinite;
+}
+
+.journal-section {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.8;
+    color: white;
+    font-family: 'Press Start 2P', sans-serif;
+    animation: fade-in 2.5s ease-in-out;
+}
+
+.journal-section p {
+    margin-bottom: 20px;
+    animation: fade-in-text 1.5s ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-in-text {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scale-up {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}

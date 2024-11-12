@@ -1,0 +1,115 @@
+body {
+    background: linear-gradient(to right, #fa7268, #d1c2e3);
+    font-family: 'Press Start 2P', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 8px black;
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: black;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+
+.hour, .minute, .second {
+    position: absolute;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%);
+}
+
+.hour {
+    width: 12px;
+    height: 90px;
+    background: white;
+    top: 60px;
+}
+
+.minute {
+    width: 8px;
+    height: 120px;
+    background: white;
+    top: 30px;
+}
+
+.second {
+    width: 4px;
+    height: 140px;
+    background: red;
+    top: 10px;
+}
+
+.test-text {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    margin: 20px;
+    text-shadow: 2px 2px 4px black;
+}
+
+.sad-emoji {
+    font-size: 50px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s;
+}
+
+.sad-emoji:hover {
+    transform: scale(1.2);
+    color: #ffb3b3;
+}
+
+.button {
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    padding: 20px 40px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s, transform 0.3s ease;
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+.button:hover {
+    background-color: #333;
+    transform: scale(1.1);
+}
+
+.progress-bar {
+    width: 0%;
+    height: 12px;
+    background: linear-gradient(to right, #4caf50, #00ff00);
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: width 2s ease-in-out, background 1s ease;
+}
+
+.progress-bar.animate {
+    width: 100%;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="assets/ICON.png" href="assets/ICON.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entree of the Day</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Users/selina/Desktop/Zhao_c1ix_f24/entries/entry 3/assets/entry 3.css"> 
+</head>
+<body>
+
+    <div class="nav">
+        <div class="logo">Entree of the Day</div>
+        <div>
+            <a href="file:///Users/selina/Desktop/Zhao_c1ix_f24/entries/index/index.html">Home</a>
+            <a href="file:///Users/selina/Desktop/Zhao_c1ix_f24/entries/entry%201/entry1.html">Entry 1</a>
+            <a href="file:///Users/selina/Desktop/Zhao_c1ix_f24/entries/entry%202/entry%202.html">Entry 2</a>
+        </div>
+    </div>
+
+    <div class="slider">
+        <button class="arrow arrow-left" onclick="prevSlide()">&#8249;</button>
+
+        <img src="img/Dish 1.pic.jpg" alt="Dish 1" class="slide" id="img1">
+        <img src="img/Dish 3.pic.jpg" alt="Dish 2" class="slide" id="img2">
+        <img src="img/Dish 6.pic.jpg" alt="Dish 3" class="slide" id="img3">
+
+        <button class="arrow arrow-right" onclick="nextSlide()">&#8250;</button>
+    </div>
+
+    <div class="entry">
+        <div class="entry-title">SUNDAY 9:00 PM SEP 30th</div>
+        <div class="entry-content">
+            <p>This afternoon I met up with a friend to go to her house to help her photograph her finished project.</p>
+            <p>After finishing the shoot we chose a Japanese restaurant for dinner. This Japanese restaurant is a restaurant I made a reservation at on RESY a week ago on 53rd St.</p>
+            <p>It was on the pricey side but we both agreed that it was one of the best restaurants we've eaten at in recent memory.</p>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        const imagesGroup1 = [
+            "img/Dish 1.pic.jpg",
+            "img/Dish 3.pic.jpg",
+            "img/Dish 6.pic.jpg"
+        ];
+
+        const imagesGroup2 = [
+            "img/Dish 4.pic.jpg",
+            "img/Dish 8.pic.jpg",
+            "img/Dish 7.pic.jpg"
+        ];
+
+        const imgElements = document.querySelectorAll('.slide');
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % 2; 
+            updateImages();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide === 0) ? 1 : 0;
+            updateImages();
+        }
+
+        function updateImages() {
+            if (currentSlide === 0) {
+                imgElements[0].src = imagesGroup1[0];
+                imgElements[1].src = imagesGroup1[1];
+                imgElements[2].src = imagesGroup1[2];
+            } else {
+                imgElements[0].src = imagesGroup2[0];
+                imgElements[1].src = imagesGroup2[1];
+                imgElements[2].src = imagesGroup2[2];
+            }
+        }
+    </script>
+
+</body>
+</html>

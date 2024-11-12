@@ -1,0 +1,182 @@
+body {
+    font-family: 'Press Start 2P', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e10085;
+    color: white;
+    animation: backgroundFade 3s ease-in-out;
+}
+
+@keyframes backgroundFade {
+    from { background-color: #00aeff; }
+    to { background-color: #e10085; }
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 15px;
+    animation: slideDownNav 1s ease;
+}
+
+@keyframes slideDownNav {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+.nav .logo {
+    font-size: 24px;
+    color: white;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px;
+    background-color: #ff1a85;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav a:hover {
+    background-color: #ffd6fa;
+    transform: scale(1.1);
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.gif-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.gif-image {
+    width: 400px;
+    height: auto;
+    border-radius: 20px;
+    margin: 0 20px;
+    transition: transform 0.3s ease;
+}
+
+.gif-image:hover {
+    transform: scale(1.1);
+}
+
+.text-section {
+    text-align: center;
+    font-size: 24px;
+    animation: slideUp 1.5s ease-in-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.date, .time, .location {
+    margin-top: 10px;
+}
+
+.date {
+    font-size: 28px;
+    color: #000000;
+}
+
+.time {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.location {
+    font-size: 18px;
+    color: white;
+    background-color: black;
+    padding: 5px 15px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.new-content-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    animation: fadeInNewContent 2s ease-in-out;
+}
+
+@keyframes fadeInNewContent {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.new-gif .gif-image-small {
+    width: 300px;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.new-gif .gif-image-small:hover {
+    transform: scale(1.1);
+}
+
+.new-text {
+    max-width: 500px;
+    margin-left: 20px;
+    font-size: 14px;
+    text-align: left;
+    color: white;
+    line-height: 1.8;
+}
+
+/* Image grid for dishes */
+.image-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+.dish {
+    text-align: center;
+    max-width: 250px;
+    margin: 0 10px;
+}
+
+.dish img {
+    width: 220px;
+    height: auto;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.dish img:hover {
+    transform: scale(1.1);
+}
+
+.dish p {
+    margin-top: 10px;
+    font-size: 14px;
+}
