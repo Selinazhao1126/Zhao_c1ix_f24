@@ -1,0 +1,127 @@
+body {
+    font-family: 'Press Start 2P', sans-serif;
+    background: url('/Users/selina/Desktop/Zhao_c1ix_f24/entries/index/assets/background.GIF') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.nav .logo {
+    color: #ff007f;
+    font-size: 20px;
+    text-shadow: 0 0 8px #ff007f;
+}
+
+.nav .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.nav .nav-links a:hover {
+    color: #ff007f;
+}
+
+.main-content {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.neon-title {
+    font-size: 48px;
+    color: #ffffff;
+    text-shadow: 
+        0 0 5px #ff007f, 
+        0 0 10px #ff007f, 
+        0 0 20px #ff007f, 
+        0 0 40px #ff1ab3, 
+        0 0 80px #ff1ab3;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 5px #ff007f, 
+            0 0 10px #ff007f, 
+            0 0 20px #ff007f, 
+            0 0 40px #ff1ab3, 
+            0 0 80px #ff1ab3;
+    }
+    50% {
+        text-shadow: 
+            0 0 10px #ff007f, 
+            0 0 20px #ff007f, 
+            0 0 40px #ff007f, 
+            0 0 80px #ff4dc4, 
+            0 0 100px #ff4dc4;
+    }
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 600px;
+}
+
+.rotating-logo {
+    width: 100%;
+    height: auto;
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.bubble-button {
+    font-family: 'Press Start 2P', sans-serif;
+    background: linear-gradient(135deg, #ff007f, #ff1ab3);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff007f, 0 0 20px #ff1ab3;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.bubble-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #ff4dc4, #ff75d6);
+}
