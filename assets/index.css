@@ -11,32 +11,33 @@ body {
 }
 
 .nav {
-    position: fixed;
-    top: 0;
     width: 100%;
     padding: 15px;
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+    background-color: black;
     display: flex;
     justify-content: space-between;
-    z-index: 1000;
+    align-items: center;
+    position: fixed; 
+    top: 0; 
+    z-index: 1000; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .nav .logo {
-    color: #ff007f;
     font-size: 10px;
-    text-shadow: 0 0 8px #ff007f;
+    color: white;
 }
 
 .nav .nav-links a {
-    color: #ffffff;
+    color: #ffb3d5;
     text-decoration: none;
     margin: 0 10px;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
+    font-size: 10px
 }
 
 .nav .nav-links a:hover {
-    color: #ff007f;
+    color: #ffffff;
 }
 
 .main-content {
