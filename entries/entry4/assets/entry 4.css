@@ -15,44 +15,47 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #77c0e2;
-    padding: 15px;
-    animation: slideDownNav 1.5s ease-in-out;
+    background-color: #0800ff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: slideInFromTop 1s ease-in-out;
 }
 
-@keyframes slideDownNav {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
+@keyframes slideInFromTop {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 .nav .logo {
-    font-size: 22px;
+    font-size: 10px;
     color: white;
     text-transform: uppercase;
-    animation: fadeIn 1s ease-in-out;
+    text-shadow: 2px 2px 5px black;
 }
 
 .nav a {
-    color: #77c0e2;
+    color: white;
     text-decoration: none;
     background-color: white;
-    padding: 8px 16px;
+    color: #0004ff;
+    padding: 8px 8px;
+    font-size: 10px; 
     border-radius: 20px;
-    margin-left: 8px;
-    transition: background-color 0.3s, transform 0.3s;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+    animation: bounceIn 2s ease;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
 }
 
 .nav a:hover {
-    background-color: #0011ff;
+    background-color: #001aff;
     color: white;
-    transform: scale(1.05);
-    animation: pulseEffect 0.5s ease-in-out;
-}
-
-@keyframes pulseEffect {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    transform: scale(1.1);
 }
 
 .container {
