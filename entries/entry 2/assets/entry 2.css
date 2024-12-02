@@ -8,75 +8,198 @@ body {
     align-items: center;
     height: 100vh;
     color: white;
+    animation: fadeInBody 2s ease-in-out;
 }
-
 .nav {
     width: 100%;
+    padding: 15px;
     background-color: black;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed; 
+    top: 0; 
+    z-index: 1000; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.logo {
-    font-size: 18px;
-    color: #fa7268;
-}
-
-.dropbtn {
-    background-color: #fa7268;
+.nav .logo {
+    font-size: 10px;
     color: white;
-    font-size: 14px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown-content a {
-    color: black;
+.nav .nav-links a {
+    color: #ffb3d5;
     text-decoration: none;
-    display: block;
-    padding: 10px;
+    margin: 0 10px;
+    transition: color 0.3s;
+    font-size: 10px
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.nav .nav-links a:hover {
+    color: #ffffff;
+}
+
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .container {
     width: 900px;
     background-color: black;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    animation: scaleIn 1.5s ease;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .header {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
+    animation: slideInDown 1.5s ease-out;
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #ffffff;
+    text-shadow: 0 0 10px #fa7268;
+    animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText {
+    0% {
+        text-shadow: 0 0 10px #fa7268, 0 0 20px #fa7268;
+    }
+    100% {
+        text-shadow: 0 0 15px #ffb3b3, 0 0 30px #ffb3b3;
+    }
+}
+
+.header .date-time {
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    text-shadow: 0 0 5px #ffffff;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .images {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 15px;
 }
 
 .images img {
     width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: 3px solid white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: float 2.5s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ffb3b3;
+}
+
+.text-section {
+    width: 300px;
+    padding-left: 20px;
+    animation: slideInLeft 1.5s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.text-section p {
+    font-size: 14px;
+    background-color: black;
+    padding: 15px;
     border-radius: 10px;
+    line-height: 1.6;
+    color: white;
+    text-shadow: 0 0 5px white;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .images {
+        grid-template-columns: 1fr;
+    }
+
+    .text-section {
+        width: 100%;
+        padding-left: 0;
+        text-align: center;
+    }
 }
