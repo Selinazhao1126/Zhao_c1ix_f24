@@ -24,14 +24,14 @@ body {
 
 .nav .logo {
     color: #ff007f;
-    font-size: 20px;
+    font-size: 10px;
     text-shadow: 0 0 8px #ff007f;
 }
 
 .nav .nav-links a {
     color: #ffffff;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 10px;
     transition: color 0.3s ease;
 }
 
