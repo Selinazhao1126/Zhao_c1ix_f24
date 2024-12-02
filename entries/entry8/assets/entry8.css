@@ -26,13 +26,13 @@ body {
 }
 
 .nav .logo {
-    font-size: 20px;
+    font-size: 10px;
 }
 
 .nav .nav-links a {
     color: #ff00ae;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 8px;
     transition: color 0.3s;
 }
 
