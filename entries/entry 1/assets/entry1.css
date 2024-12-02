@@ -2,26 +2,24 @@ body {
     background: linear-gradient(to right, #fa7268, #d1c2e3);
     font-family: 'Press Start 2P', sans-serif;
     margin: 0;
-    height: 100vh;
+    padding: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.container {
+    text-align: center;
 }
 
 h1 {
-    color: white;
     font-size: 36px;
-    font-weight: bold;
-    margin-top: 10px;
     text-transform: uppercase;
     text-shadow: 4px 4px 8px black;
     animation: fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    margin-bottom: 20px;
 }
 
 .clock {
@@ -31,6 +29,7 @@ h1 {
     background: black;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
     position: relative;
+    margin: 20px auto;
 }
 
 .hour, .minute, .second {
@@ -63,19 +62,15 @@ h1 {
 
 .test-text {
     font-size: 16px;
-    color: white;
-    text-align: center;
-    margin: 20px;
     text-shadow: 2px 2px 4px black;
+    margin-bottom: 20px;
 }
 
 .sad-emoji {
     font-size: 50px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
     cursor: pointer;
     transition: transform 0.2s ease, color 0.3s;
+    margin: 10px auto;
 }
 
 .sad-emoji:hover {
@@ -91,9 +86,9 @@ h1 {
     border-radius: 15px;
     border: none;
     cursor: pointer;
-    margin-top: 30px;
     transition: background-color 0.3s, transform 0.3s ease;
     font-family: 'Press Start 2P', sans-serif;
+    margin: 20px auto;
 }
 
 .button:hover {
@@ -104,12 +99,22 @@ h1 {
 .progress-bar {
     width: 0%;
     height: 12px;
-    background: linear-gradient(to right, #4caf50, #00ff00);
-    margin-top: 20px;
+    background: linear-gradient(to right, #af4c9e, #ff00ea);
     border-radius: 5px;
-    transition: width 2s ease-in-out, background 1s ease;
+    margin-top: 20px;
+    animation: progressAnimation 2s ease-in-out forwards;
 }
 
-.progress-bar.animate {
-    width: 100%;
+@keyframes progressAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }

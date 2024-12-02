@@ -1,70 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="assets/ICON.png" href="assets/ICON.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Izakaya Time</title>
+    <link rel="icon" href="assets/ICON.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/Users/selina/Desktop/Zhao_c1ix_f24/entries/entry 1/assets/entry1.css"> 
+    <link rel="stylesheet" href="assets/entry1.css">
 </head>
 <body>
-
-    <h1>"IZAKAYA" TIME!!</h1>
-    
-    <div class="test-text">
-        Test my fatigue<br>
-        level throughout<br>
-        the day
+    <div class="container">
+        <h1>"IZAKAYA" TIME!!</h1>
+        
+        <div class="test-text">
+            Test my fatigue<br>
+            level throughout<br>
+            the day
+        </div>
+        
+        <div class="clock">
+            <div class="hour"></div>
+            <div class="minute"></div>
+            <div class="second"></div>
+        </div>
+        
+        <div class="sad-emoji">😞</div>
+        
+        <button class="button">0-100 START!!</button>
+        
+        <div class="progress-bar"></div>
     </div>
-    
-    <div class="clock">
-        <div class="hour" id="hour"></div>
-        <div class="minute" id="minute"></div>
-        <div class="second" id="second"></div>
-    </div>
-    
-    <div class="sad-emoji" id="emoji">😞</div>
-    
-    <button class="button" id="startButton">0-100 START!!</button>
-    
-    <div class="progress-bar" id="progressBar"></div>
-
-    <script>
-        const emoji = document.getElementById('emoji');
-        const progressBar = document.getElementById('progressBar');
-        const startButton = document.getElementById('startButton');
-
-        emoji.addEventListener('click', () => {
-            emoji.textContent = emoji.textContent === "😞" ? "😊" : "😞";
-        });
-
-        startButton.addEventListener('click', () => {
-            progressBar.classList.add('animate');
-        });
-
-        function updateClock() {
-            const hourHand = document.getElementById('hour');
-            const minuteHand = document.getElementById('minute');
-            const secondHand = document.getElementById('second');
-
-            const now = new Date();
-            const hours = now.getHours();
-            const minutes = now.getMinutes();
-            const seconds = now.getSeconds();
-
-            const hourRotation = (hours % 12) * 30 + (minutes / 2);
-            const minuteRotation = minutes * 6;
-            const secondRotation = seconds * 6;
-
-            hourHand.style.transform = `translateX(-50%) rotate(${hourRotation}deg)`;
-            minuteHand.style.transform = `translateX(-50%) rotate(${minuteRotation}deg)`;
-            secondHand.style.transform = `translateX(-50%) rotate(${secondRotation}deg)`;
-        }
-
-        setInterval(updateClock, 1000);
-        updateClock();
-    </script>
-
 </body>
 </html>
