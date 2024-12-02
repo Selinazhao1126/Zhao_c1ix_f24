@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="assets/ICON.png" href="assets/ICON.png">
+    <link rel="icon" href="../../assets/ICON.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entree of the Day</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/Users/selina/Desktop/Zhao_c1ix_f24/entries/entry 3/assets/entry 3.css"> 
+    <link rel="stylesheet" href="assets/entry3.css"> 
 </head>
 <body>
 
     <div class="nav">
         <div class="logo">ENTRY OF THE DAY</div>
         <div class="nav-links">
-            <a href="file:///Users/selina/Desktop/Zhao_c1ix_f24/entries/index/index.html">HOME</a>
-            <a href="file:///Users/selina/Desktop/Zhao_c1ix_f24/entries/entry%201/entry1.html">ENTRY 1</a>
-            <a href="file:///Users/selina/Desktop/Zhao_c1ix_f24/entries/entry%202/entry%202.html">ENTRY 2</a>
-            <a href="file:///Users/selina/Desktop/Zhao_c1ix_f24/entries/entry%203/entry%203.html">ENTRY 3</a>
-            <a href="file:///Users/selina/Desktop/Zhao_c1ix_f24/entries/entry%204/entry%204.html">ENTRY 4</a>
-            <a href="file:///Users/selina/Desktop/Zhao_c1ix_f24/entries/entry%205/entry5.html">ENTRY 5</a>
-            <a href="file:///Users/selina/Desktop/Zhao_c1ix_f24/entries/entry%206/entry6.html">ENTRY 6</a>
-            <a href="/Users/selina/Desktop/Zhao_c1ix_f24/entries/entry 7/entry7.html">ENTRY 7</a>
-            <a href="/Users/selina/Desktop/Zhao_c1ix_f24/entries/entry 8/entry8.html">ENTRY 8</a>
-            <a href="/Users/selina/Desktop/Zhao_c1ix_f24/entries/entry 9/entry9.html">ENTRY 9</a>
-            <a href="/Users/selina/Desktop/Zhao_c1ix_f24/entries/entry 10/entry10.html">ENTRY 10</a>
+            <a href="../../index.html">HOME</a>
+            <a href="../entry2/entry2.html">ENTRY 2</a>
+            <a href="../entry3/entry3.html">ENTRY 3</a>
+            <a href="../entry4/entry4.html">ENTRY 4</a>
+            <a href="../entry5/entry5.html">ENTRY 5</a>
+            <a href="../entry6/entry6.html">ENTRY 6</a>
+            <a href="../entry7/entry7.html">ENTRY 7</a>
+            <a href="../entry8/entry8.html">ENTRY 8</a>
+            <a href="../entry9/entry9.html">ENTRY 9</a>
+            <a href="../entry10/entry10.html">ENTRY 10</a>
         </div>
     </div>
 
     <div class="slider">
         <button class="arrow arrow-left" onclick="prevSlide()">&#8249;</button>
 
-        <img src="img/Dish 1.pic.jpg" alt="Dish 1" class="slide" id="img1">
-        <img src="img/Dish 3.pic.jpg" alt="Dish 2" class="slide" id="img2">
-        <img src="img/Dish 6.pic.jpg" alt="Dish 3" class="slide" id="img3">
+        <img src="assets/Dish1.jpg" alt="Dish 1" class="slide" id="img1">
+        <img src="assets/Dish2.jpg" alt="Dish 2" class="slide" id="img2">
+        <img src="assets/Dish3.jpg" alt="Dish 3" class="slide" id="img3">
 
         <button class="arrow arrow-right" onclick="nextSlide()">&#8250;</button>
     </div>
@@ -50,15 +49,15 @@
         let currentSlide = 0;
 
         const imagesGroup1 = [
-            "img/Dish 1.pic.jpg",
-            "img/Dish 3.pic.jpg",
-            "img/Dish 6.pic.jpg"
+            "assets/Dish1.jpg",
+            "assets/Dish2.jpg",
+            "assets/Dish3.jpg"
         ];
 
         const imagesGroup2 = [
-            "img/Dish 4.pic.jpg",
-            "img/Dish 8.pic.jpg",
-            "img/Dish 7.pic.jpg"
+            "assets/Dish4.jpg",
+            "assets/Dish5.jpg",
+            "assets/Dish6.jpg"
         ];
 
         const imgElements = document.querySelectorAll('.slide');
