@@ -1,0 +1,95 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: transparent; 
+}
+
+a {
+    font-size: 70px;
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 20px; 
+}
+
+
+.container {
+    position: relative;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+    padding-top: 20px; 
+    background-color: transparent; 
+}
+
+.circle {
+    position: absolute;
+    width: 40vh;
+    height: 40vh;
+    top: 50%;
+    left: 50%;
+    border-radius: 200px;
+    background-color: transparent; 
+    border: 5px solid #f544fe; 
+    filter: blur(0);
+    animation: pulse 3s infinite alternate;
+}
+
+.pill {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    top: 70%;
+    left: 50%;
+    background-color: transparent; 
+    border: 5px solid #97c4f5;
+    border-radius: 200px;
+    animation: float 4s infinite alternate; 
+}
+
+a:hover {
+    color: rgb(255, 0, 217); 
+    text-decoration: underline; 
+    text-shadow: 2px 2px 8px #FF0000;
+}
+
+a:visited {
+    color: black; 
+}
+
+a:active {
+    color: yellow; 
+}
+
+.circle:hover {
+    filter: blur(40px);
+    transform: scale(1.1); 
+}
+
+.pill:hover {
+    filter: opacity(50%);
+    transform: scale(1.1); 
+}
+
+@keyframes pulse {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+@keyframes float {
+    from {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    to {
+        transform: translate(-50%, -50%) translateY(-20px);
+    }
+}

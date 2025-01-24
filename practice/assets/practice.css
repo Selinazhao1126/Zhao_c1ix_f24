@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pixel', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #f2a7a7, #d8b1f0);
+    color: white;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    background-color: black;
+    padding: 10px;
+    text-align: left;
+}
+
+header h1 {
+    color: white;
+    font-size: 24px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-section, .right-section {
+    width: 25%;
+    position: relative;
+}
+
+.center-section {
+    width: 50%;
+    text-align: center;
+}
+
+.clock {
+    width: 100px;
+}
+
+.face {
+    width: 50px;
+    display: block;
+    margin: 10px auto;
+}
+
+.icon {
+    width: 80px;
+}
+
+.food {
+    width: 200px;
+    margin-top: 20px;
+}
+
+.options button {
+    display: block;
+    width: 150px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.options button:hover {
+    background-color: grey;
+}
