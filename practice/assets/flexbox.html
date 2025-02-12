@@ -1,141 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Izakaya Time</title>
-    <style>
-        body {
-            background: linear-gradient(to right, #fa7268, #d1c2e3);
-            font-family: Arial, sans-serif;
-            margin: 0;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
+<html>
+	<head>
+		<style>
+			.container {
+			background-color: blue;
+			margin: 10px;
+			display: flex;
+            flex-wrap:nowrap;
+            justify-content:center;
             align-items: center;
-            height: 100vh;
-        }
+            height: 700px;
 
-        .container {
-            text-align: center;
-            position: relative;
-        }
+}
+		
+			.container-item {
+				background-color: yellow;
+				color: blue;
+				text-align: center;
+				margin: 10px;
+                flex-basis: ;
 
-        h1 {
-            color: white;
-            font-size: 24px;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-weight: bold;
-        }
+			}
+		</style>
+	</head>
 
-        .clock {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: black;
-            position: relative;
-        }
+	<body>
+		<div class="container">
+			<div class="container-item" style="order: 4">A</div>
+            <div class="container-item" style="order: 5">B</div>
+            <div class="container-item" style="order: 8">C</div>
+            <div class="container-item" style="order: 10">D</div>
+            <div class="container-item" style="order: 7">E</div>
+            <div class="container-item" style="order: 9">F</div>
+            <div class="container-item" style="order: 6">G</div>
+            <div class="container-item" style="order: 2">H</div>
+            <div class="container-item" style="order: 1">I</div>
+            <div class="container-item" style="order: 3">J</div>
+		</div>
+	</body>
 
-        .clock:before {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 50px;
-            background: white;
-            top: 60px;
-            left: calc(50% - 4px);
-            transform-origin: bottom;
-            transform: rotate(60deg); /* adjust the rotation for the hour hand */
-        }
-
-        .clock:after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            height: 90px;
-            background: white;
-            top: 20px;
-            left: calc(50% - 3px);
-            transform-origin: bottom;
-            transform: rotate(0deg); /* adjust the rotation for the minute hand */
-        }
-
-        .face {
-            width: 24px;
-            height: 24px;
-            background-color: transparent;
-            border-radius: 50%;
-            border: 2px solid black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-            position: absolute;
-        }
-
-        .face.sad:before {
-            content: '😞';
-        }
-
-        .face1 { top: 20px; right: 60px; }
-        .face2 { bottom: 60px; right: 40px; }
-        .face3 { bottom: 100px; left: 60px; }
-        .face4 { top: 100px; left: 40px; }
-
-        .test-text {
-            font-size: 14px;
-            color: black;
-            position: absolute;
-            top: 60px;
-            left: 20px;
-        }
-
-        .icon {
-            position: absolute;
-            top: 140px;
-            right: 50px;
-            font-size: 20px;
-            color: black;
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 10px;
-        }
-
-        .footer .icon {
-            font-size: 16px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <h1>"IZAKAYA" TIME!!</h1>
-        <div class="test-text">
-            Test your fatigue level<br>
-            throughout the day
-        </div>
-        <div class="clock"></div>
-        <div class="face sad face1"></div>
-        <div class="face sad face2"></div>
-        <div class="face sad face3"></div>
-        <div class="face sad face4"></div>
-        <div class="icon">✍️</div>
-        <div class="footer">
-            <div class="icon">🔋</div>
-            <div class="icon">📞</div>
-            <div class="icon">🔇</div>
-            <div class="icon">📵</div>
-        </div>
-    </div>
-
-</body>
 </html>

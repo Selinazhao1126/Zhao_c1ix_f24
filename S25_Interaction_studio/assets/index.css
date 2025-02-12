@@ -41,6 +41,7 @@ body {
     font-family: 'Shrikhand', serif;
     text-shadow: 0 0 10px #5159ff, 0 0 20px #0044ff, 0 0 40px #0044ff;
     animation: fadeIn 2s ease-in-out, scalePulse 4s infinite ease-in-out;
+    mix-blend-mode: difference;
 }
 
 .neon-text:hover {

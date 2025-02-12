@@ -1,79 +1,26 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Pixel', sans-serif;
-}
-
 body {
-    background: linear-gradient(to right, #f2a7a7, #d8b1f0);
-    color: white;
+    background-color: rgb(213, 169, 255);
+    border: 25px dotted black;
 }
 
-.container {
-    width: 100%;
+h1 {
+    font-family: fantasy;
+    color: blue;
+    font-size: 50px;
+    padding: 100px 50px 100px 50px;
     text-align: center;
-    padding: 20px;
+    margin-top: 200px;
+    border: 5px dotted black;
 }
 
-header {
-    background-color: black;
-    padding: 10px;
-    text-align: left;
+p {
+    color: blanchedalmond;
 }
 
-header h1 {
-    color: white;
-    font-size: 24px;
+.test{
+    color: rgb(0, 8, 255);
 }
 
-.content {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.left-section, .right-section {
-    width: 25%;
-    position: relative;
-}
-
-.center-section {
-    width: 50%;
-    text-align: center;
-}
-
-.clock {
-    width: 100px;
-}
-
-.face {
-    width: 50px;
-    display: block;
-    margin: 10px auto;
-}
-
-.icon {
-    width: 80px;
-}
-
-.food {
-    width: 200px;
-    margin-top: 20px;
-}
-
-.options button {
-    display: block;
-    width: 150px;
-    margin: 10px auto;
-    padding: 10px;
-    background-color: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.options button:hover {
-    background-color: grey;
+.fantasy {
+    font-family: fantasy;
 }
