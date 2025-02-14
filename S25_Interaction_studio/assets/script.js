@@ -1,3 +1,44 @@
+window.onload = () => {
+  const icon = document.getElementById('icon');
+  const iconContainer = document.getElementById('icon-container');
+  
+  icon.addEventListener('click', () => {
+    iconContainer.classList.add('icon-small');
+    iconContainer.style.top = '20px';
+    iconContainer.style.left = 'calc(100% - 130px)';
+    iconContainer.style.transform = 'translate(0, 0)';
+
+    setTimeout(() => {
+      document.getElementById('top-left').style.opacity = '1';
+      document.getElementById('top-left').style.transform = 'translateY(0)';
+    }, 1500);
+
+    setTimeout(() => {
+      document.getElementById('summer-text').style.opacity = '1';
+      document.getElementById('summer-text').style.transform = 'translateY(0)';
+    }, 3000);
+
+    setTimeout(() => {
+      document.getElementById('thou-text').style.opacity = '1';
+      document.getElementById('thou-text').style.transform = 'translateY(0)';
+    }, 4500);
+  });
+};
+
+document.getElementById('blank-space').addEventListener('click', () => {
+  document.getElementById('blank-space').innerText = '...';
+
+  setTimeout(() => {
+    document.getElementById('summer-text').style.opacity = '1';
+    document.getElementById('summer-text').style.transform = 'translateY(0)';
+  }, 500);
+
+  setTimeout(() => {
+    document.getElementById('thou-text').style.opacity = '1';
+    document.getElementById('thou-text').style.transform = 'translateY(0)';
+  }, 2500);
+});
+
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
 const ctx = canvas.getContext('2d');
@@ -12,10 +53,7 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 
-const mouse = {
-  x: null,
-  y: null
-};
+const mouse = { x: null, y: null };
 
 window.addEventListener('mousemove', (event) => {
   mouse.x = event.x;

@@ -1,17 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Katibeh&family=Shrikhand&display=swap');
-
 body {
-    font-family: 'Katibeh', serif;
+    font-family: 'Iowan Old Style', serif;
     background: url('/Users/selina/Desktop/Zhao_c1ix_f24/S25_Interaction_studio/assets/background.GIF') no-repeat center center fixed;
     background-size: cover;
     color: #e4eaff;
     margin: 0;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     overflow: hidden;
-    cursor: none;
 }
 
 #particles-js {
@@ -23,68 +17,84 @@ body {
     z-index: -1;
 }
 
+#icon-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1.5s ease-in-out;
+    z-index: 2;
+}
+
+#icon {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    animation: spin-center 5s linear infinite;
+    transform-origin: center; 
+}
+
+.icon-small {
+    width: 50px;
+    height: 50px;
+    top: 30px;
+    left: calc(100% - 130px);
+    position: absolute;
+    transform: translate(0, 0);
+    animation: spin-center 5s linear infinite;
+    transform-origin: center; 
+}
+
 .top-left {
     position: absolute;
     top: 3px;
     left: 40px;
     text-align: left;
     font-size: 2.5rem;
-    animation: fadeIn 1.5s ease-in-out;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.5s ease-in-out;
 }
 
 .center {
     position: absolute;
     top: 38%;
     left: 15%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateY(50px);
     font-size: 10rem;
-    font-family: 'Shrikhand', serif;
-    text-shadow: 0 0 10px #5159ff, 0 0 20px #0044ff, 0 0 40px #0044ff;
-    animation: fadeIn 2s ease-in-out, scalePulse 4s infinite ease-in-out;
+    font-family: 'Kablammo', serif;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #0044ff;
+    opacity: 0;
+    transition: all 1.5s ease-in-out;
     mix-blend-mode: difference;
 }
 
 .neon-text:hover {
     color: #ffffff;
     text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 40px #ffcc00;
-}
-
-@keyframes scalePulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    transform: scale(1.2);
+    transition: transform 0.5s ease, text-shadow 0.5s ease;
 }
 
 .bottom {
     position: absolute;
     bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+    right: 40px;
+    text-align: right;
     font-size: 2rem;
     opacity: 0;
-    animation: appearSmooth 2.5s ease-in-out forwards;
+    transform: translateY(50px);
+    transition: all 1.5s ease-in-out;
 }
 
-@keyframes appearSmooth {
-    0% {
-        bottom: -50px;
-        opacity: 0;
-    }
-    100% {
-        bottom: 30px;
-        opacity: 1;
-    }
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+@keyframes spin-center {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .bold {
-    font-family: 'Shrikhand', serif;
-    font-weight: 700;
+    font-family: 'Iowan Old Style', serif;
+    font-weight: 600;
 }
 
 .hover-word {
@@ -109,11 +119,10 @@ body {
     border-radius: 30px;
     opacity: 0;
     white-space: nowrap;
-    font-family: 'Katibeh', serif;
+    font-family: 'Iowan Old Style', serif;
 }
 
 .hover-word:hover::before {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
-

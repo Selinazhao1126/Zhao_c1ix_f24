@@ -1,0 +1,127 @@
+body {
+    font-family: 'Iowan Old Style', serif;
+    background: url('/Users/selina/Desktop/Zhao_c1ix_f24/S25_Interaction_studio/entries/entry1/assets/background.GIF') no-repeat center center fixed;
+    background-size: cover;
+    color: #e4eaff;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    text-align: right;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#icon-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1.5s ease-in-out;
+    z-index: 2;
+}
+
+#icon {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    animation: spin-center 5s linear infinite;
+    transform-origin: center;
+}
+
+.icon-small {
+    width: 50px;
+    height: 50px;
+    top: 30px;
+    left: 30px;
+    position: absolute;
+    transform: translate(0, 0);
+    animation: spin-center 5s linear infinite;
+}
+
+@keyframes spin-center {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.section {
+    position: absolute;
+    text-align: right;
+    font-size: 2rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.5s ease-in-out;
+}
+
+#section-1 {
+    top: 10%;
+    right: 10%;
+}
+
+#section-2 {
+    top: 40%;
+    right: 10%;
+    font-size: 3rem;
+}
+
+#section-3 {
+    bottom: 10%;
+    right: 10%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.neon-text {
+    font-family: 'Kablammo', cursive;
+    font-size: 3rem;
+    color: #0015ff;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffcc00;
+    transition: transform 0.3s ease-in-out, text-shadow 0.5s ease-in-out;
+    display: inline-block;
+    text-decoration: underline;
+    visibility: visible; 
+}
+
+.neon-text:hover {
+    transform: scale(1.2);
+    color: #ffffff;
+    text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 50px #ffcc00;
+}
+
+
+.hover-word {
+    position: relative;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    color: #ffffff;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+.hover-word::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(194, 213, 255, 0.8);
+    color: white;
+    padding: 8px 12px;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hover-word:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
