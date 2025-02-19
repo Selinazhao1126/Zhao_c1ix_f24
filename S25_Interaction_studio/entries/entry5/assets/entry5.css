@@ -40,3 +40,41 @@ body {
     opacity: 0;
     transition: all 1.5s ease;
 }
+
+@media screen and (max-width: 768px) {
+    body {
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        overflow: auto;
+    }
+
+    .word {
+        font-size: 4vw; 
+        max-width: 90vw;
+        text-align: left;
+        left: 5vw; 
+        transform: none;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .line {
+        font-size: 6vw;  
+        text-align: left;
+        max-width: 85vw;
+        left: 50%;
+        transform: translateX(-50%);
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    @keyframes floatSlow {
+        0% { transform: translate(0, 0); }
+        25% { transform: translate(30vw, -15vw); }
+        50% { transform: translate(-20vw, 20vw); }
+        75% { transform: translate(15vw, 25vw); }
+        100% { transform: translate(0, 0); }
+    }
+}
+

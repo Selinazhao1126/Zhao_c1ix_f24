@@ -5,7 +5,9 @@ window.onload = () => {
     const textSection2 = document.getElementById('section-2');
     const textSection3 = document.getElementById('section-3');
     const typingText = document.getElementById("typing-text");
-    const neonText = document.querySelector(".neon-text"); 
+
+    const sentence = "Rough winds shake the darling buds of May,";
+    let isRaining = false;
 
     icon.addEventListener('click', () => {
         iconContainer.classList.add('icon-small');
@@ -21,34 +23,55 @@ window.onload = () => {
         setTimeout(() => {
             textSection2.style.opacity = "1";  
             textSection2.style.transform = "translateY(0)";
-            typingText.innerHTML = "";
-            typeEffect();
+            typingText.innerHTML = sentence;
         }, 3000);
 
         setTimeout(() => {
             textSection3.style.opacity = "1";  
             textSection3.style.transform = "translateY(0)";
-            neonText.style.opacity = "1"; 
-            neonText.style.visibility = "visible"; 
         }, 4500);
     });
-};
 
-function typeEffect() {
-    const text = "Rough winds shake the darling buds of May,";
-    let i = 0;
-    const speed = 100;
-    const typingText = document.getElementById("typing-text");
-
-    function type() {
-        if (i < text.length) {
-            typingText.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
+    typingText.addEventListener("click", () => {
+        if (!isRaining) {
+            isRaining = true;
+            makeLetterRain();
         }
+    });
+
+    function makeLetterRain() {
+        const container = document.createElement("div");
+        container.style.position = "absolute";
+        container.style.top = "40%";
+        container.style.right = "10%";
+        container.style.fontSize = "3rem";
+        container.style.color = "#e4eaff";
+        container.style.textAlign = "right";
+        container.style.pointerEvents = "none";
+        document.body.appendChild(container);
+
+        sentence.split("").forEach((char, i) => {
+            const span = document.createElement("span");
+            span.textContent = char;
+            span.style.position = "absolute";
+            span.style.right = `${10 + i * 30}px`;
+            span.style.top = "-50px";
+            span.style.opacity = "1";
+            span.style.transition = "transform 1s ease-in, opacity 1s ease-in";
+            container.appendChild(span);
+
+            setTimeout(() => {
+                span.style.transform = `translateY(500px) rotate(${Math.random() * 360}deg)`;
+                span.style.opacity = "0";
+            }, Math.random() * 1000 + 500);
+        });
+
+        setTimeout(() => {
+            container.remove();
+            isRaining = false;
+        }, 3000);
     }
-    type();
-}
+};
 
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);

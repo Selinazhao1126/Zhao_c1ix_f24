@@ -1,20 +1,13 @@
 body {
     font-family: 'Iowan Old Style', serif;
     background: url('/Users/selina/Desktop/Zhao_c1ix_f24/S25_Interaction_studio/assets/background.GIF') no-repeat center center fixed;
-    background-size: cover;
-    color: #e4eaff;
+    background-size: cover;  
+    background-attachment: fixed;
+    color: #ffffff;
     margin: 0;
     height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
-}
-
-#particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
 }
 
 #icon-container {
@@ -27,64 +20,11 @@ body {
 }
 
 #icon {
-    width: 150px;
-    height: 150px;
+    width: 10vw;  
+    height: 10vw;
     cursor: pointer;
     animation: spin-center 5s linear infinite;
-    transform-origin: center; 
-}
-
-.icon-small {
-    width: 50px;
-    height: 50px;
-    top: 30px;
-    left: calc(100% - 130px);
-    position: absolute;
-    transform: translate(0, 0);
-    animation: spin-center 5s linear infinite;
-    transform-origin: center; 
-}
-
-.top-left {
-    position: absolute;
-    top: 3px;
-    left: 40px;
-    text-align: left;
-    font-size: 2.5rem;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1.5s ease-in-out;
-}
-
-.center {
-    position: absolute;
-    top: 38%;
-    left: 15%;
-    transform: translate(-50%, -50%) translateY(50px);
-    font-size: 10rem;
-    font-family: 'Kablammo', serif;
-    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #0044ff;
-    opacity: 0;
-    transition: all 1.5s ease-in-out;
-    mix-blend-mode: difference;
-}
-
-.neon-text:hover {
-    color: #ffffff;
-    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 40px #ffcc00;
-    transform: scale(1.2);
-    transition: transform 0.5s ease, text-shadow 0.5s ease;
-}
-
-.bottom {
-    position: absolute;
-    bottom: 30px;
-    right: 40px;
-    text-align: right;
-    font-size: 2rem;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1.5s ease-in-out;
+    transform-origin: center;
 }
 
 @keyframes spin-center {
@@ -92,9 +32,65 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-.bold {
-    font-family: 'Iowan Old Style', serif;
-    font-weight: 600;
+.top-left {
+    position: absolute;
+    top: 3vh;
+    left: 5vw;
+    text-align: left;
+    font-size: 2.5vw;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.5s ease-in-out;
+}
+
+.center {
+    position: absolute;
+    top: 40vh;
+    left: 15vw;
+    font-size: 8vw;  
+    font-family: 'Kablammo', serif;
+    color: white;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #0400ff, 0 0 40px #0044ff;
+    opacity: 0;
+    transition: all 1.5s ease-in-out;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 5vh;
+    right: 5vw;
+    text-align: right;
+    font-size: 2vw;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.5s ease-in-out;
+}
+
+.neon-text {
+    color: white;
+    text-decoration: none;
+    text-decoration: underline;
+    display: inline-block; 
+    animation: pulse 3s infinite ease-in-out;
+    transition: transform 0.5s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.neon-text:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 40px #ffcc00;
+    transform: scale(1.2);
+}
+
+.neon-text:active {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 40px #ffcc00;
+    transform: scale(1.2);
 }
 
 .hover-word {
@@ -102,7 +98,6 @@ body {
     font-weight: bold;
     font-style: italic;
     cursor: pointer;
-    color: #ffffff;
     transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -115,14 +110,51 @@ body {
     background: rgba(194, 213, 255, 0.8);
     color: rgb(255, 255, 255);
     padding: 8px 12px;
-    font-size: 2rem;
-    border-radius: 30px;
+    font-size: 1.5vw;
+    border-radius: 20px;
     opacity: 0;
-    white-space: nowrap;
-    font-family: 'Iowan Old Style', serif;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .hover-word:hover::before {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
+}
+
+.hover-word:active::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-size: 100% 100%;  
+        background-attachment: fixed;
+        overflow: auto;
+    }
+
+    #icon {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .top-left {
+        font-size: 5vw;  
+        left: 5vw;
+    }
+
+    .center {
+        font-size: 17vw;
+        top: 30vh;
+        left: 10vw;
+        word-wrap: break-word;  
+        text-align: center;
+        max-width: 80vw;
+    }
+
+    .bottom {
+        font-size: 4vw;
+        right: 5vw;
+        bottom: 3vh;
+    }
 }

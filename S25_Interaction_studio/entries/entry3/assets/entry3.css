@@ -1,0 +1,153 @@
+body {
+    font-family: 'Iowan Old Style', serif;
+    background: url('/Users/selina/Desktop/Zhao_c1ix_f24/S25_Interaction_studio/entries/entry3/assets/background.GIF') no-repeat center center fixed;
+    background-size: cover;
+    color: #e4eaff;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+#icon-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1.5s ease-in-out;
+    z-index: 2;
+}
+
+#icon {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    animation: spin-center 5s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes spin-center {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.section {
+    position: absolute;
+    font-size: 2.5rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.5s ease-in-out;
+    width: 100%;
+}
+
+#section-1 {
+    top: 20%;
+}
+
+#section-2 {
+    bottom: 20%;
+}
+
+.neon-text {
+    font-family: 'Kablammo', cursive;
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 0 0 15px #ffffff, 0 0 30px #ffcc00, 0 0 45px #ff6600;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.5s ease-in-out;
+}
+
+.neon-text:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+#interactive-text {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    animation: floating-glow 5s infinite alternate ease-in-out;
+}
+
+@keyframes floating-glow {
+    0% { transform: translateY(0); text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff6600; }
+    50% { transform: translateY(-15px) scale(1.1); text-shadow: 0 0 20px #ffcc00, 0 0 40px #ff6600; }
+    100% { transform: translateY(0); text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff6600; }
+}
+
+.hover-word {
+    position: relative;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+.hover-word::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hover-word:hover::before {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        overflow: auto;
+    }
+
+    #icon {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .section {
+        font-size: 7vw;  
+        text-align: left; 
+        max-width: 85vw; 
+        left: 5vw;
+        transform: none; 
+        word-wrap: break-word; 
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+
+    #section-1 {
+        top: 25%;
+    }
+
+    #section-2 {
+        bottom: 20%;
+    }
+
+    .neon-text {
+        font-size: 20vw; 
+        display: block; 
+        text-align: left; 
+        max-width: 80vw; 
+        margin: 0;
+    }
+
+    .hover-word:hover::before {
+        opacity: 0;
+    }
+
+    .hover-word:active::before {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}

@@ -1,21 +1,14 @@
 body {
     font-family: 'Iowan Old Style', serif;
     background: url('/Users/selina/Desktop/Zhao_c1ix_f24/S25_Interaction_studio/entries/entry1/assets/background.GIF') no-repeat center center fixed;
-    background-size: cover;
+    background-size: cover;  
+    background-attachment: fixed;
     color: #e4eaff;
     margin: 0;
     height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     text-align: right;
-}
-
-#particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
 }
 
 #icon-container {
@@ -28,21 +21,11 @@ body {
 }
 
 #icon {
-    width: 150px;
-    height: 150px;
+    width: 10vw;
+    height: 10vw;
     cursor: pointer;
     animation: spin-center 5s linear infinite;
     transform-origin: center;
-}
-
-.icon-small {
-    width: 50px;
-    height: 50px;
-    top: 30px;
-    left: 30px;
-    position: absolute;
-    transform: translate(0, 0);
-    animation: spin-center 5s linear infinite;
 }
 
 @keyframes spin-center {
@@ -68,6 +51,30 @@ body {
     top: 40%;
     right: 10%;
     font-size: 3rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+    animation: floatAttention 3s ease-in-out infinite alternate;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #66ccff, 0 0 15px #0044ff;
+    cursor: pointer;
+}
+
+@keyframes floatAttention {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.05); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+#section-2:hover {
+    animation: shake 0.3s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-5px) rotate(-2deg); }
+    50% { transform: translateY(5px) rotate(2deg); }
+    75% { transform: translateY(-3px) rotate(-1deg); }
+    100% { transform: translateY(0) rotate(0deg); }
 }
 
 #section-3 {
@@ -86,7 +93,6 @@ body {
     transition: transform 0.3s ease-in-out, text-shadow 0.5s ease-in-out;
     display: inline-block;
     text-decoration: underline;
-    visibility: visible; 
 }
 
 .neon-text:hover {
@@ -94,7 +100,6 @@ body {
     color: #ffffff;
     text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 50px #ffcc00;
 }
-
 
 .hover-word {
     position: relative;
@@ -124,4 +129,76 @@ body {
 .hover-word:hover::before {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
+}
+
+.rough-wind span {
+    display: inline-block;
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.rough-wind.clicked span {
+    opacity: 0;
+    transform: translateY(100px) rotate(15deg);
+}
+
+.rough-wind.reset span {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        overflow: auto;
+    }
+
+    #icon {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .section {
+        text-align: center;
+    }
+
+    #section-1 {
+        font-size: 5vw;
+        top: 8vh;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #section-2 {
+        font-size: 8vw;
+        top: 35vh;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        word-wrap: break-word;
+        text-align: center;
+        max-width: 80vw;
+    }
+
+    #section-3 {
+        font-size: 4vw;
+        bottom: 5vh;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .neon-text {
+        font-size: 11vw; 
+    }
+
+    .hover-word:hover::before {
+        opacity: 0;
+    }
+
+    .hover-word:active::before {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
 }

@@ -1,0 +1,142 @@
+body {
+    font-family: 'Iowan Old Style', serif;
+    background: url('/Users/selina/Desktop/Zhao_c1ix_f24/S25_Interaction_studio/entries/entry2/assets/background.GIF') no-repeat center center fixed;
+    background-size: cover;
+    color: #e4eaff;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    cursor: none;
+}
+
+#icon-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1.5s ease-in-out;
+    z-index: 2;
+}
+
+#icon {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    animation: spin-center 5s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes spin-center {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.poem-line {
+    position: absolute;
+    opacity: 0;
+    font-size: 3rem;
+    text-shadow: 0 0 20px #ffffff, 0 0 40px #0044ff, 0 0 60px #66ccff;
+}
+
+.line-1 { top: 20%; left: 10%; }
+.line-2 { top: 35%; left: 15%; }
+.line-3 { top: 50%; left: 20%; }
+.line-4 { top: 65%; left: 25%; }
+
+#water-effect-container {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 200%;  
+    overflow: hidden;
+    display: flex;
+    white-space: nowrap;
+}
+
+.water-effect-text {
+    font-size: 4rem;
+    color: #ffffff;
+    filter: blur(2px);
+    opacity: 1;
+    white-space: nowrap;
+    padding-right: 50px;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+#explore-button {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+#explore-button img {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+#explore-button img:hover {
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        overflow: auto;
+    }
+
+    #icon {
+        width: 30vw; 
+        height: 30vw;
+    }
+
+    .poem-line {
+        font-size: 6vw; 
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: wrap;
+        max-width: 80vw;
+        text-shadow: 0 0 5px #ffffff, 0 0 10px #0044ff, 0 0 15px #66ccff;
+    }
+
+    .line-1 { top: 15%; }
+    .line-2 { top: 30%; }
+    .line-3 { top: 45%; }
+    .line-4 { top: 60%; }
+
+    #water-effect-container {
+        bottom: 9%;
+    }
+
+    .water-effect-text {
+        font-size: 6vw;
+        font-weight: bold;
+        text-shadow: 0 0 5px #ffffff, 0 0 10px #66ccff, 0 0 15px #0044ff;
+        filter: blur(0.5px);
+    }
+
+    #explore-button {
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    #explore-button img {
+        width: 20vw; 
+        height: auto;
+    }
+
+    #explore-button img:active {
+        transform: scale(1.2);
+    }
+}
